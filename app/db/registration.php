@@ -4,10 +4,10 @@
 $db_user = "root"; // Логин БД
 $db_password = "z"; // Пароль БД
 $database = "allinsol_reg"; // БД*/
- $db_host = "qagirl.mysql.ukraine.com.ua";
-$db_user = "qagirl_db"; // Логин БД
-$db_password = "CS3H7lta"; // Пароль БД
-$database = "qagirl_db"; // БД
+ $db_host = "allinsol.mysql.ukraine.com.ua";
+$db_user = "allinsol_bcr"; // Логин БД
+$db_password = "vekuph4b"; // Пароль БД
+$database = "allinsol_bcr"; // БД
 
 // Подключение к базе данных
 $db = mysql_connect($db_host,$db_user,$db_password) or die("Не могу создать соединение ");
@@ -57,7 +57,7 @@ function GetClearPhoneNumber($number) {
   return $number;
 }
 $name = getVar('name');
-$phone = getVar('custom_tel');
+$phone = getVar('entry_1805884529');
 $email = getVar('email');
 
 // if (empty($name) && empty($phone) && empty($email)) {

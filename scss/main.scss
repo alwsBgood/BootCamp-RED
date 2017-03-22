@@ -4,20 +4,65 @@
 //Custom Styles Here
 
 
+#sec_02{
+  padding: 65px 0;
+  .title{
+    margin: 11px 0;
+  }
+  .text{
+    margin-top: 160px;
+  }
+  .sec_img{
+    float: right;
+  }
+}
+
+#sec_03{
+  padding: 35px 0;
+  .title{
+    margin: 11px 0;
+  }
+  .text{
+    margin-top: 165px;
+  }
+  .sec_img{
+    float: right;
+    margin-right: -30px;
+  }
+}
+
+#sec_04{
+  padding: 20px 0 140px;
+  .title{
+    margin-bottom: 25px;
+  }
+  .db-form{
+    max-width: 360px;
+    margin-top: -10px;
+    .btn{margin-top: 45px;}
+  }
+  .text_sm{
+    color: $main_text_color;
+  }
+}
+
 footer{
   padding: 15px 0 15px;
-  background-color: #202020;
+  background-color: $main_color;
   .politics{
     margin-top: 17px;
     a{
-      color: #65666a;
-      font-size: 14px;
+      color: #fff;
+      font-size: 16px;
+      opacity: .5;
+      transition: opacity .4s;
+      letter-spacing: .02em;
     }
-    a:hover{color: $main_color;}
+    a:hover{opacity: 1}
     a+a{margin-left: 10px;}
   }
   .logo_rezart{
-    margin-top: 5px;
+    margin-top: 15px;
     margin-left: 25px;
     width: 80px;
     // margin-right: 20px;

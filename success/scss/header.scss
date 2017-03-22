@@ -1,0 +1,252 @@
+@import "bourbon";
+@import "vars.scss";
+
+body {
+	position: relative;
+	font: 18px/30px $main_font;
+	color: $main_text_color;
+	background-color: #fff;
+}
+
+body.unscroll{
+    overflow: hidden;
+}
+
+.text--title{
+    font-family: $main_bold_font;
+    letter-spacing: .02em;
+}
+
+.text{
+    letter-spacing: .02em;
+}
+
+.text--red{
+    color: $main_color;
+}
+
+.title{
+    font-size: 28px;
+    line-height: 34px;
+}
+
+.md-modal.md-show{
+    opacity: 1;
+  }
+.md-modal{
+    opacity: 0;
+  }
+
+/* SCROLL BAR STYLES*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+ /* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 20px rgba(0,0,0,  0.3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background: $main_color;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: $main_color;
+}
+
+/* BUTTON scrollUP SYLES*/
+
+#scrollup {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    width: 30px;
+    transform: rotate(180deg);
+    display: none;
+    opacity: 1;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 40px;
+    text-shadow: -2px 2px 5px rgba(0,0,0, 0.3);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    svg{
+      fill: #848484;
+      transition: all 0.5s;
+    }
+}
+
+#scrollup:hover{
+  svg{fill: $main_color;}
+}
+
+.hidden{
+    height: 0;
+    width: 0;
+}
+.bar-long {
+	height: 5px;
+	width: 0;
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: $main_color;
+}
+
+.btn{
+    width: 100%;
+    max-width: 359px;
+    height: 56px;
+	background-color: $main_color;
+
+	color: #fff;
+	font: 17px/30px $main_bold_font;
+	text-transform: uppercase;
+
+    border-radius: 28px;
+    background-color: #af1e2d;
+}
+
+.btn:hover{
+	background-color: #cc3141;
+}
+
+.btn:active{
+	background-color: #860d19;
+}
+
+
+#sec_01{
+    padding: 30px 0 85px;
+    background-repeat: no-repeat;
+    background-position: top 100px center;
+    background-image: url(../img/sec_01-bg.png);
+
+    background-color: $main_color;
+
+    color: #fff;
+    min-height: 100vh;
+    .title{
+        margin-top: 200px;
+        margin-bottom: 20px;
+    }
+    footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+      padding: 15px 0 15px;
+      z-index: 7;
+      .politics{
+        margin-top: 17px;
+        a{
+          color: #fff;
+          font-size: 16px;
+          opacity: 1;
+          transition: opacity .4s;
+          letter-spacing: .02em;
+        }
+        a:hover{opacity: .8}
+        a+a{margin-left: 10px;}
+      }
+      .logo_rezart{
+        margin-top: 15px;
+        margin-left: 25px;
+        width: 80px;
+        // margin-right: 20px;
+        float: right;
+      }
+    }
+}
+
+@media screen and (max-height: 840px){
+  #sec_01{
+    background-position: top center;
+    .title{
+        margin-top: 160px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    body{
+      font-size: 16px;
+      line-height: 26px;
+    }
+    #sec_01{
+        background-size: contain;
+        background-position:  center;
+    }
+    footer{
+      .politics a{
+        font-size: 13px;
+      }
+    }
+}
+
+@media (max-width: 767px) {
+    [class*='col-']{width: 100%;}
+    #sec_01{
+        text-align: center;
+        padding-bottom: 80px;
+        position: relative;
+        background-color: $main_color;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../img/bl1-img1-png.png);
+        .wrap{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: .6;
+            background-color: $main_color;
+            top: 0;
+            left: 0;
+            z-index: 4
+        }
+        .container{
+            position: relative;
+            z-index: 5;
+        }
+        p{text-shadow: 0 0 10px rgba(0,0,0, .3);}
+        .title{
+            br{display: none;}
+        }
+        footer{
+          text-align: center;
+          .politics{
+            a{
+               font-size: 14px;
+               display: block;
+               text-align: center;
+             }
+           a+a{margin-left: 0 }
+          }
+          .logo_rezart{
+            display: inline-block;
+            float: none;
+            margin-top: 20px;
+            margin-left: 0;
+          }
+        }
+    }
+
+    div[id*='modal_politics']{
+      h2{padding-top: 70px;}
+      .btn_close_modal{
+        top: 20px;
+      }
+    }
+}
+
+
+
+
+@media screen and (max-height: 740px){
+  .md_large .md_content {max-height: 320px;}
+}
+
+

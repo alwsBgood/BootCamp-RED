@@ -59,7 +59,7 @@
   $data = array(
     'date_visited' => date("d.m.Y"),
     'time_visited' => date("G:i:s"),
-    'page_url'     => 'http://rezart.agency/',
+    'page_url'     => 'http://allinsol.com/bootcampred/',
     'utm_source'   => isset($_GET['utm_source']) ? $_GET['utm_source'] : null,
     'utm_campaign' => isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : null,
     'utm_medium'   => isset($_GET['utm_medium']) ? $_GET['utm_medium'] : null,

@@ -1,6 +1,6 @@
 if (localStorage.name && localStorage.email)  {
   // запись сохраненных данных сразу в поля, если надо
-  $('input[name="entry.1336947051"]').val(localStorage.name);
+  $('input[name="name"]').val(localStorage.name);
   $('input[type="email"]').val(localStorage.email);
   $('input[type="tel"]').val(localStorage.phone);
 }
@@ -28,7 +28,7 @@ $(function() {
 
    var alertImage = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 286.1 286.1"><path d="M143 0C64 0 0 64 0 143c0 79 64 143 143 143 79 0 143-64 143-143C286.1 64 222 0 143 0zM143 259.2c-64.2 0-116.2-52-116.2-116.2S78.8 26.8 143 26.8s116.2 52 116.2 116.2S207.2 259.2 143 259.2zM143 62.7c-10.2 0-18 5.3-18 14v79.2c0 8.6 7.8 14 18 14 10 0 18-5.6 18-14V76.7C161 68.3 153 62.7 143 62.7zM143 187.7c-9.8 0-17.9 8-17.9 17.9 0 9.8 8 17.8 17.9 17.8s17.8-8 17.8-17.8C160.9 195.7 152.9 187.7 143 187.7z" fill="#E2574C"/></svg>';
 
-   localStorage.name = form.find('input[name="entry.1336947051"]').val();
+   localStorage.name = form.find('input[name="name"]').val();
    localStorage.email = form.find('input[type="email"]').val();
    localStorage.phone = form.find('input[type="tel"]').val();
 
@@ -65,6 +65,21 @@ $(function() {
     $(send_btn).each(function() {
       $(this).attr('disabled', true);
     });
+
+      // Отправка в zohoCRM
+    var form_data = $(this).closest('form').serializeArray();
+    var form_data_bootcamp = {};
+
+    $.each(form_data, function(i, v) {
+       form_data_bootcamp[v.name] = v.value;
+    });
+
+       console.log(form_data_bootcamp);
+       $.ajax({
+          type: 'POST',
+           url: '/registration/application.php',
+           data: {bootcamp: form_data_bootcamp, utm_source: form_data_bootcamp['utm_source'], google_id: form_data_bootcamp['google_id'], utm_campaign: form_data_bootcamp['utm_campaign'], utm_content: form_data_bootcamp['utm_content'], utm_medium: form_data_bootcamp['utm_medium'], utm_term: form_data_bootcamp['utm_term']},
+       });
       // Отправка в базу данных
         $.ajax({
          type: 'POST',
@@ -73,13 +88,13 @@ $(function() {
          data: form.serialize(),
        });
        // Отправка в Google sheets
-       $.ajax({
-        type: 'POST',
-        url: 'https://docs.google.com/forms/d/e/1FAIpQLScKoPmqx2QVD_bMxFbf_E4SczZzfyFhlS34MsBswu38z4mzRA/formResponse',
-        dataType: 'json',
-        data: msg,
-      });
-    // Отправка на почту и в Trello
+      //  $.ajax({
+      //   type: 'POST',
+      //   url: 'https://docs.google.com/forms/d/e/1FAIpQLScKoPmqx2QVD_bMxFbf_E4SczZzfyFhlS34MsBswu38z4mzRA/formResponse',
+      //   dataType: 'json',
+      //   data: msg,
+      // });
+    // Отправка на почту
     $.ajax({
       type: 'POST',
       url: 'mail.php',
@@ -90,11 +105,11 @@ $(function() {
         }, 1000);
         $('div.md-show').removeClass('md-show');
         $('form').trigger("reset");
-        $("#call_ok")[0].click();
-        // dataLayer.push({
-        //   'form_type': formType,
-        //   'event': "form_submit"
-        // });
+        window.location.href = 'http://allinsol.com/bootcampred/success/';
+        dataLayer.push({
+          'form_type': formType,
+          'event': "form_submit"
+        });
       },
       error: function(xhr, str) {
         console.log("Erorr")
@@ -118,7 +133,7 @@ $(function() {
 //  INPUT TEL MASK
 
 jQuery(function($){
- $("input[type='tel']").mask("+9 (999) 999-9999");
+ $("input[type='tel']").mask("+99 (999) 999-9999");
 });
 
 
@@ -132,51 +147,6 @@ $(window).scroll(function() {
     $('.bar-long').css('width', scrollPercent +"%"  );
 
   });
-
-
-//YOUTUBE
-
-$(function() {
-  $(".youtube").each(function() {
-    $(this).css('background-image', 'url(http://i.ytimg.com/vi/' + this.id + '/sddefault.jpg)');
-
-    $(this).append($('<div/>', {'class': 'play'}));
-
-    $(document).delegate('#'+this.id, 'click', function() {
-      var iframe_url = "https://www.youtube.com/embed/" + this.id + "?autoplay=1&autohide=1";
-      if ($(this).data('params')) iframe_url+='&'+$(this).data('params');
-
-      var iframe = $('<iframe/>', {'frameborder': '0', 'src': iframe_url, 'width': $(this).width(), 'height': $(this).height() })
-
-      $(this).replaceWith(iframe);
-    });
-  });
-});
-
-// Waypoint
-
-// $('#sec_03').waypoint(
-//   function() {
-//     $( "#sec_03 .item" ).addClass( "animated" );
-//     $( "#sec_03 .item" ).addClass( "flipInX" );
-//   },
-//   {offset: "550px"}
-//   );
-
-// Parallax
-
-$(window).scroll(function() {
-
-  var st = $(this).scrollTop() /100;
-  var tt = $(this).scrollTop() /100;
-
-  $(".paralax_letter").css({
-    "transform" : "translate3d(0px, " + st  + "%, .0px)",
-    "-webkit-transform" : "translate3d(0px, " + st  + "%, .0px)",
-    "-ms-transform" : "translate3d(0px, " + st  + "%, .0px)"
-  });
-
-});
 
 //  UP BUTTON
 
@@ -214,48 +184,3 @@ $('.md-overlay').click(function() {
   $("body").removeClass('unscroll');
 });
 
-
-// Perfect Pxel
-
-$('body').each(function() {
-  var body = $(this);
-  var img_url = $(this).data('img');
-  var img = new Image();
-  img.src = img_url;
-  img.onload = function(){
-    var ppbox = '<div id="pp" style="background: url('+img_url+') no-repeat 50% 0%;top:0;width:100%;position:absolute;z-index:1000000;opacity:0.5;height:'+img.height+'px"></div>';
-    var ppbtn = '<button onclick="myOff()" id="ppbtn" style="position:fixed;top:0;right:0;z-index:1000001">ON</button>'
-    body.append(ppbox);
-    body.append(ppbtn);
-  };
-});
-function myOff() {
-  var ppbtntext = $('#ppbtn').text();
-  if (ppbtntext == 'ON') {
-    $('#ppbtn').text('OFF');
-    $('#pp').css('display', 'none');
-  } else {
-    $('#ppbtn').text('ON');
-    $('#pp')        .css({
-      ' z-index' : '1000000',
-      display: 'block'
-    });
-
-  }
-}
-
-$('html').keydown(function(){
-  var ppbtntext = $('#ppbtn').text();
-  if (event.keyCode == 81) {
-    if (ppbtntext == 'ON') {
-      $('#ppbtn').text('OFF');
-      $('#pp').css('display', 'none');
-    } else {
-      $('#ppbtn').text('ON');
-      $('#pp')        .css({
-        ' z-index' : '1000000',
-        display: 'block'
-      });
-    }
-  }
-});

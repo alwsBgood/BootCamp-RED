@@ -1,77 +1,60 @@
 @import url(../libs/niftymodal/component.css);
-@import url(../libs/slick/slick.min.css);
-form {
-  width: 400px;
-  margin: 40px auto; }
-  form .field {
-    width: 100%;
-    margin: 5px 0; }
+#sec_02 {
+  padding: 65px 0; }
+  #sec_02 .title {
+    margin: 11px 0; }
+  #sec_02 .text {
+    margin-top: 160px; }
+  #sec_02 .sec_img {
+    float: right; }
+
+#sec_03 {
+  padding: 35px 0; }
+  #sec_03 .title {
+    margin: 11px 0; }
+  #sec_03 .text {
+    margin-top: 165px; }
+  #sec_03 .sec_img {
+    float: right;
+    margin-right: -30px; }
+
+#sec_04 {
+  padding: 20px 0 140px; }
+  #sec_04 .title {
+    margin-bottom: 25px; }
+  #sec_04 .db-form {
+    max-width: 360px;
+    margin-top: -10px; }
+    #sec_04 .db-form .btn {
+      margin-top: 45px; }
+  #sec_04 .text_sm {
+    color: #000; }
 
 footer {
   padding: 15px 0 15px;
-  background-color: #202020; }
+  background-color: #af1e2d; }
   footer .politics {
     margin-top: 17px; }
     footer .politics a {
-      color: #65666a;
-      font-size: 14px; }
+      color: #fff;
+      font-size: 16px;
+      opacity: .5;
+      -webkit-transition: opacity .4s;
+      transition: opacity .4s;
+      letter-spacing: .02em; }
     footer .politics a:hover {
-      color: #1988cc; }
+      opacity: 1; }
     footer .politics a + a {
       margin-left: 10px; }
   footer .logo_rezart {
-    margin-top: 5px;
+    margin-top: 15px;
     margin-left: 25px;
     width: 80px;
     float: right; }
 
-/* ================================*/
-/* CURSOR STYLES*/
-.touch_mode_grab {
-  cursor: grab !important;
-  cursor: -webkit-grab !important; }
-
-.touch_mode_grabbing {
-  cursor: grabbing !important;
-  cursor: -webkit-grabbing !important; }
-
-/* ==========================*/
-.tabs__content {
-  display: none !important; }
-
-.tabs__content.active {
-  display: block !important; }
-
 .hidden {
   height: 0;
   width: 0; }
-
-div[id*="modal_callback"] {
-  max-width: 500px; }
-  div[id*="modal_callback"] h2 {
-    font-size: 29px;
-    line-height: 36px;
-    margin: 30px 30px 0px; }
-  div[id*="modal_callback"] .h2_desc {
-    margin-bottom: 25px; }
-  div[id*="modal_callback"] .md-content {
-    padding: 20px;
-    background: #fff;
-    background-size: cover;
-    text-align: center; }
-  div[id*="modal_callback"] .form-wrap {
-    display: block; }
-  div[id*="modal_callback"] .field {
-    max-width: 360px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto; }
-    div[id*="modal_callback"] .field input {
-      width: 100%; }
-  div[id*="modal_callback"] .field + .field {
-    margin-top: 5px; }
-  div[id*="modal_callback"] .btn {
-    margin: 10px auto 0; }
 
 .field {
   position: relative;
@@ -220,93 +203,21 @@ div[id*="modal_politics"] {
   .btn_close_modal a:hover {
     color: #000; }
     .btn_close_modal a:hover svg .a {
-      fill: #1988cc; }
+      fill: #af1e2d; }
 
 .t_small {
   font-size: 14px; }
-
-.slick-dots {
-  position: absolute;
-  bottom: -40px;
-  display: block;
-  width: 100%;
-  text-align: center; }
-
-.slick-dots li {
-  display: inline-block;
-  height: 12px;
-  width: 12px;
-  margin: 0 5px;
-  padding: 0;
-  cursor: pointer; }
-
-.slick-dots li.slick-active button {
-  background: none; }
-
-.slick-dots li button {
-  background-color: #000;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  border: 2px solid #000;
-  color: transparent;
-  cursor: pointer;
-  display: block;
-  font-size: 0;
-  height: 12px;
-  line-height: 0;
-  outline: medium none;
-  padding: 2px;
-  width: 12px; }
-
-.slick-next, .slick-prev {
-  bottom: initial;
-  top: 200px;
-  background: none;
-  width: 20px;
-  height: 20px; }
-
-.slick-next {
-  border-top: 4px solid #000;
-  border-right: 4px solid #000;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  right: 10px;
-  margin: 0; }
-
-.slick-prev {
-  border-top: 4px solid #000;
-  border-left: 4px solid #000;
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  left: 10px;
-  margin: 0; }
-
-.slick-next:hover {
-  border-top: 4px solid #1988cc;
-  border-right: 4px solid #1988cc; }
-
-.slick-prev:hover {
-  border-top: 4px solid #1988cc;
-  border-left: 4px solid #1988cc; }
-
-.slick-next:before, .slick-prev:before {
-  display: none; }
-
-.slick-slide {
-  outline: none; }
 
 .field {
   position: relative;
   display: block; }
   .field input {
-    padding: 25px 0;
+    padding: 13px 10px;
     width: 100%;
     color: #000;
     font: 18px/20px "Roboto", sans-serif; }
   .field textarea {
-    padding: 25px 0;
+    padding: 10px 0;
     width: 100%;
     color: #000;
     font: 18px/20px "Roboto", sans-serif; }
@@ -317,8 +228,8 @@ div[id*="modal_politics"] {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 3px;
-  background: #f0f0f0;
+  height: 1px;
+  background: #000;
   -webkit-transition: all 0.4s;
   transition: all 0.4s; }
 
@@ -327,8 +238,8 @@ div[id*="modal_politics"] {
   left: 0;
   bottom: 0;
   width: 0;
-  height: 3px;
-  background: #1988cc;
+  height: 1px;
+  background: #af1e2d;
   -webkit-transition: all 0.4s;
   transition: all 0.4s; }
 
@@ -337,33 +248,84 @@ textarea:active + .bar, textarea:focus + .bar {
   width: 100%; }
 
 .field + .field {
-  margin-top: 7px; }
+  margin-top: 17px; }
 
 input::-webkit-input-placeholder {
-  color: #9F9F9F;
+  color: #7f7f7fq;
   font: 18px/24px "Roboto", sans-serif; }
 
 input:-moz-placeholder {
-  color: #9F9F9F;
+  color: #7f7f7fq;
   font: 18px/24px "Roboto", sans-serif; }
 
 input::-moz-placeholder {
-  color: #9F9F9F;
+  color: #7f7f7fq;
   font: 18px/24px "Roboto", sans-serif; }
 
 input:-ms-input-placeholder {
-  color: #9F9F9F;
+  color: #7f7f7f;
   font: 18px/24px "Roboto", sans-serif; }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  #sec_02 .sec_img {
+    width: 100%; }
+  #sec_02 .text {
+    margin-top: 40px; }
+    #sec_02 .text br {
+      display: none; }
+  #sec_03 .sec_img {
+    width: 100%;
+    margin: 0; }
+  #sec_03 .text {
+    margin-top: 80px; }
+    #sec_03 .text br {
+      display: none; }
+  #sec_04 {
+    padding-bottom: 100px; }
   footer .politics a {
     font-size: 13px; } }
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  #sec_02 .sec_img {
+    width: 100%; }
+  #sec_02 .text {
+    margin-top: 100px; }
+    #sec_02 .text br {
+      display: none; }
+  #sec_03 .sec_img {
+    width: 100%;
+    margin: 0; }
+  #sec_03 .text {
+    margin-top: 120px; }
+    #sec_03 .text br {
+      display: none; } }
 
 @media screen and (max-height: 740px) {
   .md_large .md_content {
     max-height: 320px; } }
 
 @media (max-width: 767px) {
+  [class*='col-'] {
+    width: 100%;
+    margin: 0; }
+  .sec_img {
+    width: 100%;
+    max-width: 300px;
+    float: none; }
+  #sec_02 .sec_img {
+    float: none;
+    margin-top: 40px; }
+  #sec_02 .text {
+    margin-top: 30px; }
+  #sec_03 .sec_img {
+    float: none;
+    margin: 0 0 0 -40px; }
+  #sec_03 .text {
+    margin-top: 30px; }
+  #sec_04 {
+    padding-bottom: 50px; }
+    #sec_04 .db-form {
+      margin: 40px auto; }
   footer {
     text-align: center; }
     footer .politics a {
@@ -375,28 +337,17 @@ input:-ms-input-placeholder {
     footer .logo_rezart {
       display: inline-block;
       float: none;
-      margin-top: 20px; }
-  div[id*="modal_callback"] {
-    min-width: 510px; }
-    div[id*="modal_callback"] .md-content {
-      padding: 35px;
-      background: #fff; }
-    div[id*="modal_callback"] h2 {
-      margin: 30px 0;
-      line-height: 34px; }
-    div[id*="modal_callback"] form {
-      display: block;
-      max-width: 390px;
-      margin: 0 auto;
-      width: 100%; }
-    div[id*="modal_callback"] .field {
-      max-width: 360px;
-      width: 100%; }
-    div[id*="modal_callback"] .field + .field {
-      margin-top: 15px; }
-    div[id*="modal_callback"] .btn {
-      margin: 25px auto 0; }
+      margin-top: 20px;
+      margin-left: 0; }
   div[id*='modal_politics'] h2 {
     padding-top: 70px; }
   div[id*='modal_politics'] .btn_close_modal {
     top: 20px; } }
+
+@media (max-width: 420px) {
+  .title {
+    font-size: 22px;
+    line-height: 28px; }
+  #sec_01 h1 {
+    font-size: 38px;
+    line-height: 46px; } }
